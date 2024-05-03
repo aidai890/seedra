@@ -90,6 +90,7 @@ function Grid() {
                 <div className='text-gray-500 text-base font-normal'>In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...</div>
                 <button className='text-green-600 font-lexend text-base font-medium w-[106px] h-[51px] bg-white rounded-lg mt-3'>Read</button>
                 <img className=' h-[353px]'  src={young}/>
+                <div></div>
             </div>
         </div>
     </div>
