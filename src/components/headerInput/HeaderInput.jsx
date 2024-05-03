@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { Input as BaseInput } from '@mui/base/Input';
 import { styled } from '@mui/system';
-import { green } from '@mui/material/colors';
+import { green as muiGreen } from '@mui/material/colors'; // Переименование переменной green
 
 const Input = React.forwardRef(function CustomInput(props, ref) {
   return <BaseInput slots={{ input: InputElement }} {...props} ref={ref} />;
 });
 
-const blue = {
+const greenPalette = { // Переименование объекта с цветами
   100: '#DAECFF',
   200: '#b6daff',
   400: '#3399FF',
@@ -38,6 +38,7 @@ const InputElement = styled('input')(
   line-height: 2.3;
   padding: 8px 12px;
   border-radius: 25px;
+  margin-top:8px;
   color: ${theme.palette.mode === 'dark' ? grey[300] : grey[900]};
   background: ${theme.palette.mode === 'dark' ? grey[900] : '#fff'};
   border: 1px solid ${theme.palette.mode === 'dark' ? grey[700] : grey[200]};
@@ -46,12 +47,12 @@ const InputElement = styled('input')(
   };
 
   &:hover {
-    border-color: ${blue[400]};
+    border-color: ${muiGreen[400]}; // Использование переменной muiGreen
   }
 
   &:focus {
-    border-color: ${green[400]};
-    box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? blue[600] : blue[200]};
+    border-color: ${muiGreen[400]}; // Использование переменной muiGreen
+    box-shadow: 0 0 0 3px ${theme.palette.mode === 'dark' ? muiGreen[600] : muiGreen[200]}; // Использование переменной muiGreen
   }
 
   // firefox
@@ -62,5 +63,5 @@ const InputElement = styled('input')(
 );
 
 export default function HeaderInput() {
-  return <Input aria-label="Demo input" placeholder="Search…" />;
+  return <Input  aria-label="Demo input" placeholder="Search…" />;
 }

@@ -1,30 +1,43 @@
 import React, { useState } from "react";
 import korzina from "../../assets/Aidai/korzina.svg";
 import heard from "../../assets/Aidai/heard.svg";
+
 const Icons = () => {
-  const [popup,setPopup]=useState(false)
+  const [popup, setPopup] = useState(false);
+  const [love, setLove] = useState(false);
 
   return (
-    <div>
-      <div className="flex gap-6 ml-[-30px] pt-5 ">
-        <img className="relative" src={heard} alt="" />
-        <div className="absolute">
-          <p className="ml-[20px] text-green-500">0</p>
-        </div>
-        <img className="relative" onClick={()=>{
-          setPopup(!popup)
-        }} src={korzina} alt="" />
-        {popup &&(
-          <div>
+    <div className="flex pt-7">
+      <div className="relative">
+        <img
+          onClick={() => {
+            setLove(!love);
+          }}
+          src={heard}
+          alt=""
+        />
+        {love && (
+          <div className="mt-[29px] bg-white z-50 absolute border-2 w-[30rem] ml-[-29rem]">
+            <p>love</p>
+          </div>
+        )}
+      </div>
+      <p className="text-green-600">0</p>
+      <div className="relative">
+        <img
+          onClick={() => {
+            setPopup(!popup);
+          }}
+          src={korzina}
+          alt=""
+        />
+        {popup && (
+          <div className="mt-[29px] bg-white z-50 absolute border-2 w-[30rem] ml-[-29rem]">
             <p>korzina</p>
           </div>
         )}
-        <div className="absolute">
-          <p className="ml-[65px] text-green-500">0</p>
-        </div>
       </div>
-
-      
+      <p className="text-green-600">0</p>
     </div>
   );
 };

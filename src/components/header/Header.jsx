@@ -9,10 +9,13 @@ import IconsHeader from "../iconsHeader/IconsHeader";
 
 const Header = () => {
   return (
+    <>
     <Container>
       <div className="">
-        <div className="flex justify-between">
-          <img src={logo} alt="" />
+        <div className="flex justify-between ">
+         <Link to={'/'}>
+         <img className="pt-5" src={logo} alt="" />
+         </Link>
           <div className="">
             <ul className="flex gap-5 pt-4 text-gray-500 font-Lexend">
               <Link to={"/all"}>
@@ -35,6 +38,8 @@ const Header = () => {
         </div>
       </div>
     </Container>
+    <hr className="mt-[10px]" />
+    </>
   );
 };
 
